@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>sandbox</groupId>
+	<artifactId>autotest</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<!-- java8で書く -->
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+
+		<!-- 文字コードはUTF-8 -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<!-- バージョン指定 -->
+		<cucumber.version>4.2.5</cucumber.version>
+		<selenide.version>5.1.0</selenide.version>
+		<allure.version>2.10.0</allure.version>
+		<junit.version>4.12</junit.version>
+	</properties>
+
+	<dependencies>
+		<!-- Java用Cucumber -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- JUnitでCucumberを使うためのパッケージ -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Selenide -->
+		<dependency>
+			<groupId>com.codeborne</groupId>
+			<artifactId>selenide</artifactId>
+			<version>${selenide.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- AllureでCucumberテストをうまく出力するためのパッケージ -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber4-jvm</artifactId>
+			<version>${allure.version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- AllureでSelenideテストをうまく出力するためのパッケージ -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-selenide</artifactId>
+			<version>${allure.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
